@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Senai.Senatur.WebApi.Domains
 {
-    public partial class Senatur : DbContext
+    public partial class SenaturContext : DbContext
     {
-        public Senatur()
+        public SenaturContext()
         {
         }
 
-        public Senatur(DbContextOptions<Senatur> options)
+        public SenaturContext(DbContextOptions<SenaturContext> options)
             : base(options)
         {
         }
