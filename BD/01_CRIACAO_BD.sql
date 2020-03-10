@@ -1,0 +1,29 @@
+CREATE DATABASE Senatur_Tarde;
+
+USE Senatur_Tarde;
+
+CREATE TABLE Pacotes (
+	IdPacote		INT PRIMARY KEY IDENTITY,
+	NomePacote		VARCHAR(150) NOT NULL,
+	Descricao		TEXT NOT NULL,
+	DataIda			DATE NOT NULL,
+	DataVolta		DATE NOT NULL,
+	Valor			DECIMAL(18,2) NOT NULL,
+	Ativo			BIT NOT NULL,
+	NomeCidade		VARCHAR(150) NOT NULL
+);
+GO
+
+CREATE TABLE TiposUsuario (
+	IdTipoUsuario	INT PRIMARY KEY IDENTITY,
+	Titulo			VARCHAR(250) NOT NULL
+);
+GO
+
+CREATE TABLE Usuarios (
+	IdUsuario		INT PRIMARY KEY IDENTITY,
+	Email			VARCHAR(250) NOT NULL UNIQUE,
+	Senha			VARCHAR(30) NOT NULL,
+	IdTipoUsuario	INT FOREIGN KEY REFERENCES TiposUsuario(IdTipoUsuario)
+);
+GO
