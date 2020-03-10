@@ -1,7 +1,7 @@
 CREATE DATABASE Senatur_Tarde;
-
+GO
 USE Senatur_Tarde;
-
+GO
 CREATE TABLE Pacotes (
 	IdPacote		INT PRIMARY KEY IDENTITY,
 	NomePacote		VARCHAR(150) NOT NULL,
@@ -12,13 +12,11 @@ CREATE TABLE Pacotes (
 	Ativo			BIT NOT NULL,
 	NomeCidade		VARCHAR(150) NOT NULL
 );
-GO
 
 CREATE TABLE TiposUsuario (
 	IdTipoUsuario	INT PRIMARY KEY IDENTITY,
 	Titulo			VARCHAR(250) NOT NULL
 );
-GO
 
 CREATE TABLE Usuarios (
 	IdUsuario		INT PRIMARY KEY IDENTITY,
@@ -26,4 +24,3 @@ CREATE TABLE Usuarios (
 	Senha			VARCHAR(30) NOT NULL,
 	IdTipoUsuario	INT FOREIGN KEY REFERENCES TiposUsuario(IdTipoUsuario)
 );
-GO
