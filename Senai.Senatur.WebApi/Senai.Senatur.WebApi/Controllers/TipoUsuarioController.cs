@@ -11,7 +11,7 @@ using Senai.Senatur.WebApi.Repositories;
 
 namespace Senai.Senatur.WebApi.Controllers
 {
-    [Produces("applicaion/json")]
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]

@@ -41,6 +41,8 @@ namespace Senai.Senatur.WebApi.Repositories
                 PacoteDB.NomeCidade = pct.NomeCidade;
             }
 
+            PacoteDB.Ativo = pct.Ativo;
+
             ctx.Pacotes.Update(PacoteDB);
             ctx.SaveChanges();
 
@@ -80,10 +82,15 @@ namespace Senai.Senatur.WebApi.Repositories
             return ctx.Pacotes.Where(p => p.NomeCidade == cidade);
         }
 
-        public IEnumerable<Pacotes> PorPreco(bool ordem)
+        public IEnumerable<Pacotes> PorPreco(string ordem)
         {
-
-            return ctx.Pacotes.OrderBy(p => p.Valor);
+            if(ordem == "ASC")
+            {
+                return ctx.Pacotes.OrderBy(p => p.Valor);
+            }else
+            {
+                return ctx.Pacotes.OrderByDescending(p => p.Valor);
+            }
         }
 
     }

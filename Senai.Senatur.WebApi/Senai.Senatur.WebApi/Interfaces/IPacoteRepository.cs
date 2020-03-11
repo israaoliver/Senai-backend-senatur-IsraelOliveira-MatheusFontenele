@@ -22,6 +22,6 @@ namespace Senai.Senatur.WebApi.Interfaces
 
         IEnumerable<Pacotes> PorCidade(string cidade);
 
-        IEnumerable<Pacotes> PorPreco(bool ordem);
+        IEnumerable<Pacotes> PorPreco(string ordem);
     }
 }

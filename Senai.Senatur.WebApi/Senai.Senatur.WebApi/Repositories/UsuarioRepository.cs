@@ -43,6 +43,7 @@ namespace Senai.Senatur.WebApi.Repositories
         public void Cadastrar(Usuarios novoUsuario)
         {
             ctx.Usuarios.Add(novoUsuario);
+            ctx.SaveChanges();
         }
 
         public void Deletar(int id)
@@ -58,7 +59,7 @@ namespace Senai.Senatur.WebApi.Repositories
 
         public List<Usuarios> Listar()
         {
-            return ctx.Usuarios.Include(e => e.IdTipoUsuarioNavigation).ToList();
+            return ctx.Usuarios.ToList();
         }
     }
 }

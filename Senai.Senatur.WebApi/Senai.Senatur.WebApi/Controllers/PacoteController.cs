@@ -179,14 +179,14 @@ namespace Senai.Senatur.WebApi.Controller
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpGet("Ordem/{ordem}")]
-        public IActionResult Ordenar(bool ordem)
+        public IActionResult Ordenar(string ordem)
         {
-            if((ordem == true) || (ordem == false))
+            if ((ordem == "ASC") || (ordem == "DES"))
             {
                 return Ok(_pacoteRepository.PorPreco(ordem));
             }
 
-            return BadRequest("Escreva True para ordem crecente ou False para ordem decrecente");
+            return BadRequest("Escreva ASC para ordem crecente ou DES para ordem decrecente");
         }
 
 
