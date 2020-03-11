@@ -105,7 +105,7 @@ namespace Senai.Senatur.WebApi.Controller
         /// <returns>o proprio objeto</returns>
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [HttpPost]
+        [HttpPut]
         public IActionResult Atualizar(Pacotes pacote)
         {
             var pacoteFind = _pacoteRepository.BuscarId(pacote.IdPacote);
@@ -153,7 +153,7 @@ namespace Senai.Senatur.WebApi.Controller
         /// <param name="cidade">Cidade a qual ele vai procurar</param>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        [HttpGet("{cidade}")]
+        [HttpGet("Cidade/{cidade}")]
         public IActionResult BuscarCidade(string cidade)
         {
             var listPacotes = _pacoteRepository.PorCidade(cidade);
@@ -174,7 +174,7 @@ namespace Senai.Senatur.WebApi.Controller
         /// <returns>Retor</returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [HttpGet("{ordem}")]
+        [HttpGet("Ordem/{ordem}")]
         public IActionResult Ordenar(bool ordem)
         {
             if((ordem == true) || (ordem == false))

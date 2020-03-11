@@ -1,25 +1,25 @@
-﻿using Senai.Senatur.WebApi.Domains;
-using Senai.Senatur.WebApi.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿    using Senai.Senatur.WebApi.Domains;
+    using Senai.Senatur.WebApi.ViewModels;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
 
-namespace Senai.Senatur.WebApi.Interfaces
-{
-    interface IUsuarioRepository
+    namespace Senai.Senatur.WebApi.Interfaces
     {
+        interface IUsuarioRepository
+        {
 
-        List<Usuarios> Listar();
+            List<Usuarios> Listar();
 
-        Usuarios BuscarPorId(int id);
+            Usuarios BuscarPorId(int id);
 
-        void Deletar(int id);
+            void Deletar(int id);
 
-        void Cadastrar(Usuarios CadastrarUsuario);
+            void Cadastrar(Usuarios CadastrarUsuario);
 
-        void Atualizar(int id, Usuarios UsuariosAtualizados);
+            void Atualizar(int id, Usuarios UsuariosAtualizados);
 
-        Usuarios BuscarPorEmailSenha(LoginViewModel login);
+            Usuarios BuscarPorEmailSenha(LoginViewModel login);
+        }
     }
-}
