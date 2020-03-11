@@ -7,13 +7,20 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Senai.Senatur.WebApi.Interfaces;
+using Senai.Senatur.WebApi.Repositories;
+using Senai.Senatur.WebApi.ViewModels;
 
 namespace Senai.Senatur.WebApi.Controller
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class LoginController : ControllerBase
     {
+
+        private IUsuarioRepository _usuarioRepository;
+
         public LoginController()
         {
             _usuarioRepository = new UsuarioRepository();
@@ -29,7 +36,7 @@ namespace Senai.Senatur.WebApi.Controller
         [HttpPost]
         public IActionResult Login(LoginViewModel lg)
         {
-            var user = _usuarioRepository.Autenticando(lg);
+            var user = _usuarioRepository.BuscarPorEmailSenha(lg);
 
             if (user == null)
             {

@@ -40,6 +40,8 @@ namespace Senai.Senatur.WebApi
                 c.IncludeXmlComments(xmlPath);
             });
 
+
+
             services
                 // Define a forma de autenticação
                 .AddAuthentication(options =>
@@ -91,7 +93,8 @@ namespace Senai.Senatur.WebApi
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Senai.Senatur.WebApi");
+                c.RoutePrefix = string.Empty;
             });
 
             app.UseAuthentication();

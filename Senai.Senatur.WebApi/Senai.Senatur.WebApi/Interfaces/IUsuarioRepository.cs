@@ -1,4 +1,5 @@
 ﻿using Senai.Senatur.WebApi.Domains;
+using Senai.Senatur.WebApi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,6 @@ namespace Senai.Senatur.WebApi.Interfaces
 
         void Atualizar(int id, Usuarios UsuariosAtualizados);
 
-        Usuarios BuscarPorEmailSenha(string email, string senha);
+        Usuarios BuscarPorEmailSenha(LoginViewModel login);
     }
 }

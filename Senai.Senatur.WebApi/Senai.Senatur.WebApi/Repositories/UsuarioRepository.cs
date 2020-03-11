@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Senai.Senatur.WebApi.Domains;
 using Senai.Senatur.WebApi.Interfaces;
+using Senai.Senatur.WebApi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace Senai.Senatur.WebApi.Repositories
             throw new NotImplementedException();
         }
 
-        public Usuarios BuscarPorEmailSenha(string email, string senha)
+        public Usuarios BuscarPorEmailSenha(LoginViewModel login)
         {
             throw new NotImplementedException();
         }

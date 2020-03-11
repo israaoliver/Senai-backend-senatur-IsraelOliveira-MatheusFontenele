@@ -4,5 +4,94 @@
         <name>Senai.Senatur.WebApi</name>
     </assembly>
     <members>
+        <member name="M:Senai.Senatur.WebApi.Controller.LoginController.Login(Senai.Senatur.WebApi.ViewModels.LoginViewModel)">
+            <summary>
+            Metodo que gera um token para logar o usuario
+            </summary>
+            <param name="lg">lg é login o objeto que vem com o email é senha do usuario</param>
+            <returns>Retorna o token gerado</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controller.PacoteController.Get">
+            <summary>
+            Lista todos os Pacotes
+            </summary>
+            <returns>Uma lista de pacotes e um status code 200 - Ok</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controller.PacoteController.BuscarId(System.Int32)">
+            <summary>
+            Busca um pacote pelo id informado
+            </summary>
+            <param name="id">Id do pacote que sera buscado</param>
+            <returns>Retorna um objeto do pacote</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controller.PacoteController.Cadastrar(Senai.Senatur.WebApi.Domains.Pacotes)">
+             <summary>
+             Cadastra um novo pacote
+             </summary>
+             <remarks>
+             Sample response:
+             
+                  {
+                    "NomePacote": "Name",
+                    "Descricao" : "description",
+                    "DataIda" : "2001/12/31",
+                    "DataVolta" : "2001/12/31",
+                    "Valor" : 0 ,
+                    "Ativo" : 1 ,
+                    "NomeCidade" : "Name"
+                    }
+                 
+            </remarks>
+             <param name="pacote">Objeto que sera cadastrado</param>
+             <returns>o proprio objeto</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controller.PacoteController.Atualizar(Senai.Senatur.WebApi.Domains.Pacotes)">
+             <summary>
+             Cadastra um novo pacote
+             </summary>
+             <remarks>
+             Sample response:
+             
+                  {
+                    "IdPacote" : 0,
+                    "NomePacote": "Name",
+                    "Descricao" : "description",
+                    "DataIda" : "2001/12/31",
+                    "DataVolta" : "2001/12/31",
+                    "Valor" : 0 ,
+                    "Ativo" : 1 ,
+                    "NomeCidade" : "Name"
+                    }
+                 
+            </remarks>
+             <param name="pacote">Objeto que sera atualizado</param>
+             <returns>o proprio objeto</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controller.PacoteController.PacotesAtivos">
+            <summary>
+            Busca um pacotes que estão ativos
+            </summary>
+            <returns>Retorna os pacotes que estão ativos</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controller.PacoteController.PacotesInativos">
+            <summary>
+            Busca um pacotes que estão inativos
+            </summary>
+            <returns>Retorna os pacotes que estão inativos</returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controller.PacoteController.BuscarCidade(System.String)">
+            <summary>
+            Lista todos os Pacotes que possuam a mesma cidade
+            </summary>
+            <returns>Uma lista de pacotes que possuam a cidade informada</returns>
+            <param name="cidade">Cidade a qual ele vai procurar</param>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controller.PacoteController.Ordenar(System.Boolean)">
+            <summary>
+            Lista os pacotes por ordem de preço
+            </summary>
+            <param name="ordem">O parametro é boleano escreva True para crecente e False para Decrecente</param>
+            <returns>Retor</returns>
+        </member>
     </members>
 </doc>
