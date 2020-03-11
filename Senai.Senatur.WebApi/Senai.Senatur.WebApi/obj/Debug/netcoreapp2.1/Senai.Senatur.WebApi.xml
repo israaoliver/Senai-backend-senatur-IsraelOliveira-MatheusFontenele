@@ -37,7 +37,7 @@
                     "DataIda" : "2001/12/31",
                     "DataVolta" : "2001/12/31",
                     "Valor" : 0 ,
-                    "Ativo" : 1 ,
+                    "Ativo" : true ,
                     "NomeCidade" : "Name"
                     }
                  
@@ -53,7 +53,6 @@
              Sample response:
              
                   {
-                    "IdPacote" : 0,
                     "NomePacote": "Name",
                     "Descricao" : "description",
                     "DataIda" : "2001/12/31",

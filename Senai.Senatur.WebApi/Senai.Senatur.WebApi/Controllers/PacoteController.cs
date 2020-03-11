@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Senatur.WebApi.Domains;
@@ -12,6 +13,7 @@ namespace Senai.Senatur.WebApi.Controller
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class PacoteController : ControllerBase
     {
@@ -56,7 +58,7 @@ namespace Senai.Senatur.WebApi.Controller
         }
 
         /// <summary>
-        /// Cadastra um novo pacote
+        /// Cadastra um novo pacote, pode ser cadastrado apenas uma informação
         /// </summary>
         /// <remarks>
         /// Sample response:
@@ -67,7 +69,7 @@ namespace Senai.Senatur.WebApi.Controller
         ///        "DataIda" : "2001/12/31",
         ///        "DataVolta" : "2001/12/31",
         ///        "Valor" : 0 ,
-        ///        "Ativo" : 1 ,
+        ///        "Ativo" : true ,
         ///        "NomeCidade" : "Name"
         ///        }
         ///     
@@ -75,6 +77,7 @@ namespace Senai.Senatur.WebApi.Controller
         /// <param name="pacote">Objeto que sera cadastrado</param>
         /// <returns>o proprio objeto</returns>
         [ProducesResponseType(StatusCodes.Status201Created)]
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Pacotes pacote)
         {
@@ -105,6 +108,7 @@ namespace Senai.Senatur.WebApi.Controller
         /// <returns>o proprio objeto</returns>
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize(Roles = "1")]
         [HttpPut]
         public IActionResult Atualizar(Pacotes pacote)
         {
