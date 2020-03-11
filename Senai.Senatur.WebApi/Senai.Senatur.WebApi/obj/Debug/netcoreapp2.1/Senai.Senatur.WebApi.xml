@@ -93,5 +93,18 @@
             <param name="ordem">O parametro é boleano escreva True para crecente e False para Decrecente</param>
             <returns>Retor</returns>
         </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.TipoUsuarioController.Listar">
+            <summary>
+            Lista todos os tipos de usuarios
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Senai.Senatur.WebApi.Controllers.TipoUsuarioController.BuscarPorId(System.Int32)">
+            <summary>
+            Retorna o Tipo Usuario buscado por id
+            </summary>
+            <param name="id">Utilizado para achar um tipo usuario especifico</param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

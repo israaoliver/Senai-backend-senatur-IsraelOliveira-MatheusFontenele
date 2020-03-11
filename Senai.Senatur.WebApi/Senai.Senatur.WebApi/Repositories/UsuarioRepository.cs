@@ -12,14 +12,27 @@ namespace Senai.Senatur.WebApi.Repositories
     public class UsuarioRepository : IUsuarioRepository
     {
         SenaturContext ctx = new SenaturContext();
+
         public void Atualizar(int id, Usuarios UsuariosAtualizados)
         {
-            throw new NotImplementedException();
+            Usuarios usuarioBuscado = BuscarPorId(id);
+            
+            if(usuarioBuscado.Email != null)
+            {
+                usuarioBuscado.Email = UsuariosAtualizados.Email;
+            }
+            if(usuarioBuscado.Senha != null)
+            {
+                usuarioBuscado.Senha = UsuariosAtualizados.Senha;
+            }
+            ctx.Usuarios.Update(usuarioBuscado);
+            ctx.SaveChanges();
+
         }
 
         public Usuarios BuscarPorEmailSenha(LoginViewModel login)
         {
-            throw new NotImplementedException();
+            return ctx.Usuarios.FirstOrDefault(e => e.Email == login.Email && e.Senha == login.Senha);
         }
 
         public Usuarios BuscarPorId(int id)
